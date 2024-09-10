@@ -111,6 +111,9 @@
         overlays = [
           self.overlays.default
         ];
+        config = {
+          allowBroken = true;
+        };
       };
     in
     {
