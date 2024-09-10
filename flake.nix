@@ -111,8 +111,6 @@
         overlays = [
           self.overlays.default
         ];
-        config = {
-        };
       };
     in
     {
