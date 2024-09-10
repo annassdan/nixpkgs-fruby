@@ -111,6 +111,12 @@
         overlays = [
           self.overlays.default
         ];
+        config = {
+          allowBroken = true;
+          permittedInsecurePackages = [
+            "openssl-1.1.1w"
+          ];
+        };
       };
     in
     {
