@@ -65,7 +65,7 @@ let
         else null;
 
       nativeBuildInputs =
-        [ bison ]
+        [ bison zlib ]
         ++ ops (stdenv.buildPlatform != stdenv.hostPlatform)
           [ buildPackages.ruby ];
       buildInputs =
@@ -73,7 +73,7 @@ let
         ++ (ops cursesSupport [ ncurses readline ])
         ++ (op docSupport groff)
         # ++ (op true zlib)
-        ++ zlib
+        # ++ zlib
         ++ (op opensslSupport openssl)
         ++ (op gdbmSupport gdbm)
         ++ (op yamlSupport libyaml)
