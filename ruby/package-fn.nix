@@ -72,7 +72,7 @@ let
         (op fiddleSupport libffi)
         ++ (ops cursesSupport [ ncurses readline ])
         ++ (op docSupport groff)
-        ++ (zlib)
+        ++ (op false zlib)
         ++ (op opensslSupport openssl)
         ++ (op gdbmSupport gdbm)
         ++ (op yamlSupport libyaml)
