@@ -72,12 +72,12 @@ let
         (op fiddleSupport libffi)
         ++ (ops cursesSupport [ ncurses readline ])
         ++ (op docSupport groff)
-        ++ (op zlibSupport zlib)
+        ++ (zlib)
         ++ (op opensslSupport openssl)
         ++ (op gdbmSupport gdbm)
         ++ (op yamlSupport libyaml)
         ++ (op yjitSupport rustc)
-        # Looks like ruby fails to build on darwin without readline even if curses
+        # Looks like ruby fails to build on darwin without readline even if curses (op zlibSupport zlib)
         # support is not enabled, so add readline to the build inputs if curses
         # support is disabled (if it's enabled, we already have it) and we're
         # running on darwin
