@@ -174,6 +174,7 @@ let
 
         addEnvHooks "$hostOffset" addGemPath
         EOF
+        $out/bin/gem install bundler -v '1.17.3'
       '';
 
       meta = with lib; {
