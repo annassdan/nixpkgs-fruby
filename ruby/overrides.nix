@@ -42,7 +42,7 @@
         "2.2.9"
         "2.6.7"
       ]);
-    override = pkg: pkg.overrideAttrs (finalAttrs: previousAttrs: { meta = previousAttrs.meta // { broken = true; }; });
+    override = pkg: (pkg.override { zlibSupport = true; }).overrideAttrs (finalAttrs: previousAttrs: { meta = previousAttrs.meta // { broken = true; }; });
   }
   # Ruby 3.1 introduced support for OpenSSL 3, everything before that uses OpenSSL 1.1.
   {
