@@ -20,6 +20,7 @@
 , bison
 , pkg-config
 , imagemagick6
+, openssl_1_1
 , autoconf
 , darwin ? null
 , buildEnv
