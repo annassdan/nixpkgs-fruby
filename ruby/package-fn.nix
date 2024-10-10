@@ -18,6 +18,8 @@
 , libyaml
 , libffi
 , bison
+, pkg-config
+, imagemagick6
 , autoconf
 , darwin ? null
 , buildEnv
@@ -65,7 +67,7 @@ let
         else null;
 
       nativeBuildInputs =
-        [ bison ]
+        [ bison imagemagick6 pkg-config zlib ]
         ++ ops (stdenv.buildPlatform != stdenv.hostPlatform)
           [ buildPackages.ruby ];
       buildInputs =
@@ -91,6 +93,9 @@ let
       enableParallelBuilding = true;
 
       postPatch = ''
+        export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:${imagemagick6}/lib/pkgconfig
+        pkg-config --modversion MagickWand
+
         ${opString (rubygems != null) ''
           cp -rL --no-preserve=mode,ownership ${rubygems} ./rubygems
         ''}
