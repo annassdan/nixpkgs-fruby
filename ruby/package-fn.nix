@@ -68,7 +68,7 @@ let
         else null;
 
       nativeBuildInputs =
-        [ bison imagemagick6 pkg-config zlib ]
+        [ bison imagemagick6 pkg-config zlib openssl_1_1 ]
         ++ ops (stdenv.buildPlatform != stdenv.hostPlatform)
           [ buildPackages.ruby ];
       buildInputs =
