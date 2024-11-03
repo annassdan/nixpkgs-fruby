@@ -117,7 +117,7 @@ let
       '';
 
       configureFlags =
-        [ "--enable-shared" "--enable-pthread" ]
+        [ "--with-openssl-dir=${openssl_1_1.dev}" "--enable-shared" "--enable-pthread" ]
         ++ op (!docSupport) "--disable-install-doc"
         ++ op jemallocSupport "--with-jemalloc"
         ++ ops stdenv.isDarwin [
